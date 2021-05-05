@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0PH-BV-2hh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="cgA-VT-he8">
+            <objects>
+                <viewController id="FVC-tQ-Cvf" customClass="HomeViewController" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9KA-JI-YoI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-rf-Bhf" userLabel="WhiteBgView">
+                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6eR-uF-Cyi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPJ-oI-oSE">
+                                <rect key="frame" x="20" y="800" width="374" height="50"/>
+                                <color key="backgroundColor" name="redBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="U2q-fX-3kI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Complete Donation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeDonationButtonPressed:" destination="FVC-tQ-Cvf" eventType="touchUpInside" id="w2P-zU-OHg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gqT-J1-49R"/>
+                        <color key="backgroundColor" name="redBg"/>
+                        <constraints>
+                            <constraint firstItem="gqT-J1-49R" firstAttribute="bottom" secondItem="CPJ-oI-oSE" secondAttribute="bottom" constant="12" id="9Z4-99-WbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Q9D-rf-Bhf" secondAttribute="trailing" id="Grr-LF-sQ7"/>
+                            <constraint firstItem="6eR-uF-Cyi" firstAttribute="leading" secondItem="9KA-JI-YoI" secondAttribute="leading" id="Ig2-sz-vzV"/>
+                            <constraint firstItem="Q9D-rf-Bhf" firstAttribute="leading" secondItem="9KA-JI-YoI" secondAttribute="leading" id="J65-6y-LI6"/>
+                            <constraint firstItem="CPJ-oI-oSE" firstAttribute="centerX" secondItem="9KA-JI-YoI" secondAttribute="centerX" id="Rpl-Mc-RZI"/>
+                            <constraint firstItem="CPJ-oI-oSE" firstAttribute="leading" secondItem="9KA-JI-YoI" secondAttribute="leading" constant="20" id="SaN-lB-jAY"/>
+                            <constraint firstAttribute="bottom" secondItem="Q9D-rf-Bhf" secondAttribute="bottom" id="gqj-GV-jDd"/>
+                            <constraint firstItem="Q9D-rf-Bhf" firstAttribute="height" secondItem="9KA-JI-YoI" secondAttribute="height" multiplier="0.5" id="lRM-Xj-F6s"/>
+                            <constraint firstAttribute="bottom" secondItem="6eR-uF-Cyi" secondAttribute="bottom" id="qoo-DG-hTw"/>
+                            <constraint firstItem="6eR-uF-Cyi" firstAttribute="top" secondItem="9KA-JI-YoI" secondAttribute="top" id="s9x-Cs-gxr"/>
+                            <constraint firstAttribute="trailing" secondItem="6eR-uF-Cyi" secondAttribute="trailing" id="yxa-eU-fMj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SSN-di-8WM"/>
+                    <connections>
+                        <outlet property="completeDonationButton" destination="CPJ-oI-oSE" id="Jzy-d1-rSf"/>
+                        <outlet property="tableView" destination="6eR-uF-Cyi" id="zEx-aL-3qC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGE-tS-ZjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231.8840579710145" y="174.77678571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YFJ-AY-10e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="0PH-BV-2hh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Rl-Bc-NLH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FVC-tQ-Cvf" kind="relationship" relationship="rootViewController" id="rTG-Tr-DP3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpG-Ze-SIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321.73913043478262" y="174.77678571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="redBg">
+            <color red="0.79607843137254897" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

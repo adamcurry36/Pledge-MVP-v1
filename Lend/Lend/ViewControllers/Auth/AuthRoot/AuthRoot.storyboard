@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZvN-9P-YIU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth Root View Controller-->
+        <scene sceneID="5K5-nj-2mJ">
+            <objects>
+                <viewController id="9S8-Vu-Mkj" customClass="AuthRootViewController" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sVa-kb-mJm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="8Rm-KA-2O5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboard 2" translatesAutoresizingMaskIntoConstraints="NO" id="qEi-rg-V2T">
+                                <rect key="frame" x="-234" y="74" width="624" height="546"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qEi-rg-V2T" secondAttribute="height" multiplier="1106:968" id="pJd-j3-Okj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pledge" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvQ-si-dep">
+                                <rect key="frame" x="40" y="377" width="145" height="52.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="The Next Generation of Donating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKQ-gy-v7P">
+                                <rect key="frame" x="20" y="644" width="374" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-Lt-sJi" customClass="RoundedButtonWithShadow" customModule="Lend" customModuleProvider="target">
+                                <rect key="frame" x="46" y="671" width="322" height="56"/>
+                                <color key="backgroundColor" name="redBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="8lX-6W-HOi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButtonPressed:" destination="9S8-Vu-Mkj" eventType="touchUpInside" id="fe2-9w-ffx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmb-lG-7dd" customClass="RoundedButtonWithShadow" customModule="Lend" customModuleProvider="target">
+                                <rect key="frame" x="46" y="750" width="322" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="nre-Iz-VVy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButtonPressed:" destination="9S8-Vu-Mkj" eventType="touchUpInside" id="wBf-cA-0Vk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m8i-TU-eOp"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="xfb-Lt-sJi" firstAttribute="centerX" secondItem="sVa-kb-mJm" secondAttribute="centerX" id="313-78-lG1"/>
+                            <constraint firstItem="m8i-TU-eOp" firstAttribute="trailing" secondItem="qEi-rg-V2T" secondAttribute="trailing" constant="24" id="4kY-zm-LLu"/>
+                            <constraint firstItem="XvQ-si-dep" firstAttribute="leading" secondItem="m8i-TU-eOp" secondAttribute="leading" constant="40" id="KBY-E9-djh"/>
+                            <constraint firstItem="8Rm-KA-2O5" firstAttribute="top" secondItem="sVa-kb-mJm" secondAttribute="top" id="Ksz-lq-bk5"/>
+                            <constraint firstItem="qEi-rg-V2T" firstAttribute="top" secondItem="m8i-TU-eOp" secondAttribute="top" constant="30" id="LQE-w0-2ZZ"/>
+                            <constraint firstItem="8Rm-KA-2O5" firstAttribute="centerX" secondItem="cKQ-gy-v7P" secondAttribute="centerX" id="Nq8-gU-A1g"/>
+                            <constraint firstItem="cKQ-gy-v7P" firstAttribute="top" secondItem="qEi-rg-V2T" secondAttribute="bottom" constant="24" id="NtA-K3-u1p"/>
+                            <constraint firstItem="xfb-Lt-sJi" firstAttribute="top" secondItem="cKQ-gy-v7P" secondAttribute="bottom" constant="10" id="Q8J-fd-86n"/>
+                            <constraint firstItem="cKQ-gy-v7P" firstAttribute="leading" secondItem="m8i-TU-eOp" secondAttribute="leading" constant="20" id="T2o-AH-sKG"/>
+                            <constraint firstItem="8Rm-KA-2O5" firstAttribute="leading" secondItem="sVa-kb-mJm" secondAttribute="leading" id="TFF-Hm-CXz"/>
+                            <constraint firstItem="Gmb-lG-7dd" firstAttribute="top" secondItem="xfb-Lt-sJi" secondAttribute="bottom" constant="23" id="Uwf-pa-Bdd"/>
+                            <constraint firstAttribute="bottom" secondItem="8Rm-KA-2O5" secondAttribute="bottom" id="Wp6-Kn-8np"/>
+                            <constraint firstItem="Gmb-lG-7dd" firstAttribute="leading" secondItem="m8i-TU-eOp" secondAttribute="leading" constant="46" id="YjH-xi-YLU"/>
+                            <constraint firstItem="xfb-Lt-sJi" firstAttribute="leading" secondItem="m8i-TU-eOp" secondAttribute="leading" constant="46" id="ZcN-gE-4iE"/>
+                            <constraint firstItem="Gmb-lG-7dd" firstAttribute="centerX" secondItem="sVa-kb-mJm" secondAttribute="centerX" id="ctq-C0-kaM"/>
+                            <constraint firstItem="XvQ-si-dep" firstAttribute="centerY" secondItem="sVa-kb-mJm" secondAttribute="centerY" multiplier="0.9" id="eSt-qC-Xb1"/>
+                            <constraint firstItem="m8i-TU-eOp" firstAttribute="bottom" secondItem="Gmb-lG-7dd" secondAttribute="bottom" constant="56" id="fT1-mJ-qgu"/>
+                            <constraint firstItem="cKQ-gy-v7P" firstAttribute="centerX" secondItem="sVa-kb-mJm" secondAttribute="centerX" id="zKy-gv-MIc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iXS-qE-LIs"/>
+                    <connections>
+                        <outlet property="signInButton" destination="Gmb-lG-7dd" id="9w6-XQ-sXo"/>
+                        <outlet property="signUpButton" destination="xfb-Lt-sJi" id="t7U-03-yEL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oig-Mv-Nlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013.0434782608697" y="194.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xxr-dM-FFK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZvN-9P-YIU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Le-n6-m4q">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9S8-Vu-Mkj" kind="relationship" relationship="rootViewController" id="f2d-wZ-7eK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvi-KV-0Ib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102.8985507246377" y="194.86607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gradient" width="250" height="541.33331298828125"/>
+        <image name="Onboard 2" width="368.66665649414062" height="322.66665649414062"/>
+        <namedColor name="redBg">
+            <color red="0.79607843137254897" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

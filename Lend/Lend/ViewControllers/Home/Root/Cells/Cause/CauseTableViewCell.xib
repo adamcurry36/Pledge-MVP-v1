@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="374" id="KGk-i7-Jjw" customClass="CauseTableViewCell" customModule="Lend" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-41-vFs">
+                        <rect key="frame" x="20" y="10" width="280" height="229.33333333333334"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="XQt-41-vFs" secondAttribute="height" multiplier="336:275" id="RHD-dO-kQC"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-Pw-IDz" userLabel="BGContainer">
+                        <rect key="frame" x="20" y="10" width="280" height="229.33333333333334"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAPPENING NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTf-2s-K5E">
+                                <rect key="frame" x="28" y="26" width="93" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONOMA VALLEY WILDFIRES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8D-kc-Vzx">
+                                <rect key="frame" x="28" y="55" width="224" height="62"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-0j-rRJ">
+                                <rect key="frame" x="176" y="179.33333333333334" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yi3-f0-1VF"/>
+                                    <constraint firstAttribute="width" secondItem="dDR-0j-rRJ" secondAttribute="height" multiplier="1:1" id="fC7-Pc-Bh4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <state key="normal" backgroundImage="donate cause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="donateButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bWo-bv-Ukb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0I-b9-Sap">
+                                <rect key="frame" x="224" y="179.33333333333334" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Li0-wk-5Q6"/>
+                                    <constraint firstAttribute="width" secondItem="k0I-b9-Sap" secondAttribute="height" multiplier="1:1" id="PjX-ty-R3x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <state key="normal" backgroundImage="share cause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ERM-CH-BEa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="causeBg"/>
+                        <constraints>
+                            <constraint firstItem="k0I-b9-Sap" firstAttribute="leading" secondItem="dDR-0j-rRJ" secondAttribute="trailing" constant="8" id="0u8-3u-3dw"/>
+                            <constraint firstItem="dDR-0j-rRJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c8D-kc-Vzx" secondAttribute="bottom" constant="10" id="2Qz-qz-vNf"/>
+                            <constraint firstAttribute="trailing" secondItem="k0I-b9-Sap" secondAttribute="trailing" constant="16" id="2en-fY-grj"/>
+                            <constraint firstAttribute="bottom" secondItem="k0I-b9-Sap" secondAttribute="bottom" constant="10" id="AUb-Sk-eo0"/>
+                            <constraint firstItem="iTf-2s-K5E" firstAttribute="leading" secondItem="BBM-Pw-IDz" secondAttribute="leading" constant="28" id="RTT-wv-EMU"/>
+                            <constraint firstAttribute="bottom" secondItem="dDR-0j-rRJ" secondAttribute="bottom" constant="10" id="Sm2-pB-BMT"/>
+                            <constraint firstItem="c8D-kc-Vzx" firstAttribute="leading" secondItem="BBM-Pw-IDz" secondAttribute="leading" constant="28" id="Xf5-4u-74W"/>
+                            <constraint firstItem="c8D-kc-Vzx" firstAttribute="centerX" secondItem="BBM-Pw-IDz" secondAttribute="centerX" id="aLe-jd-syL"/>
+                            <constraint firstItem="c8D-kc-Vzx" firstAttribute="top" secondItem="iTf-2s-K5E" secondAttribute="bottom" constant="16" id="ciL-Mt-kYb"/>
+                            <constraint firstItem="iTf-2s-K5E" firstAttribute="top" secondItem="BBM-Pw-IDz" secondAttribute="top" constant="26" id="efe-Ri-ReN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XQt-41-vFs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1cl-6Z-fJ4"/>
+                    <constraint firstAttribute="bottom" secondItem="XQt-41-vFs" secondAttribute="bottom" priority="250" constant="10" id="K6A-aZ-3Tc"/>
+                    <constraint firstItem="BBM-Pw-IDz" firstAttribute="trailing" secondItem="XQt-41-vFs" secondAttribute="trailing" id="NCH-Ec-lv2"/>
+                    <constraint firstItem="BBM-Pw-IDz" firstAttribute="top" secondItem="XQt-41-vFs" secondAttribute="top" id="QHG-wh-fIR"/>
+                    <constraint firstItem="XQt-41-vFs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ruq-Q9-pxV"/>
+                    <constraint firstItem="BBM-Pw-IDz" firstAttribute="leading" secondItem="XQt-41-vFs" secondAttribute="leading" id="Rxn-6s-sQH"/>
+                    <constraint firstItem="BBM-Pw-IDz" firstAttribute="bottom" secondItem="XQt-41-vFs" secondAttribute="bottom" id="WlU-53-rgY"/>
+                    <constraint firstItem="XQt-41-vFs" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="yIX-4I-J8L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bannerImageView" destination="XQt-41-vFs" id="gYA-V8-2dz"/>
+                <outlet property="bgConainer" destination="BBM-Pw-IDz" id="6TW-2e-rv0"/>
+                <outlet property="stateLabel" destination="iTf-2s-K5E" id="x1t-bs-ONq"/>
+                <outlet property="titleLabel" destination="c8D-kc-Vzx" id="Foa-5l-0tT"/>
+            </connections>
+            <point key="canvasLocation" x="134.40000000000001" y="243.8423645320197"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="donate cause" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="share cause" width="33.333332061767578" height="33.333332061767578"/>
+        <namedColor name="causeBg">
+            <color red="0.68199998140335083" green="0.68199998140335083" blue="0.69800001382827759" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

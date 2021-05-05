@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="djV-6o-gv3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="yNx-gT-Tkl">
+            <objects>
+                <viewController id="djV-6o-gv3" customClass="OnboardingViewController" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XBS-YB-7LS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Pledge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eez-pf-f3y">
+                                <rect key="frame" x="142.5" y="88" width="129" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4jR-0E-i32">
+                                <rect key="frame" x="0.0" y="105" width="414" height="645"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="kAI-5n-v7n"/>
+                                <cells/>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dKr-dB-4vW">
+                                <rect key="frame" x="145.5" y="750" width="123" height="28"/>
+                                <color key="pageIndicatorTintColor" name="grayText"/>
+                                <color key="currentPageIndicatorTintColor" name="redBg"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSX-0z-2Xd" customClass="RoundedButtonWithShadow" customModule="Lend" customModuleProvider="target">
+                                <rect key="frame" x="96" y="792" width="222" height="50"/>
+                                <color key="backgroundColor" name="redBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="UM3-kE-a9f"/>
+                                    <constraint firstAttribute="height" constant="50" id="tuf-fE-sgm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getStartedButtonPressed:" destination="djV-6o-gv3" eventType="touchUpInside" id="YWv-cP-wjm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1QI-jn-M8C"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GSX-0z-2Xd" firstAttribute="centerX" secondItem="XBS-YB-7LS" secondAttribute="centerX" id="JJs-bn-cvL"/>
+                            <constraint firstItem="dKr-dB-4vW" firstAttribute="top" secondItem="4jR-0E-i32" secondAttribute="bottom" id="KwD-A5-QEf"/>
+                            <constraint firstItem="dKr-dB-4vW" firstAttribute="centerX" secondItem="XBS-YB-7LS" secondAttribute="centerX" id="PR1-S4-XQc"/>
+                            <constraint firstItem="eez-pf-f3y" firstAttribute="centerX" secondItem="XBS-YB-7LS" secondAttribute="centerX" id="Zr9-C1-d5s"/>
+                            <constraint firstItem="4jR-0E-i32" firstAttribute="top" secondItem="eez-pf-f3y" secondAttribute="bottom" id="c5K-RN-LC1"/>
+                            <constraint firstItem="eez-pf-f3y" firstAttribute="top" secondItem="1QI-jn-M8C" secondAttribute="top" constant="44" id="fig-at-Rwa"/>
+                            <constraint firstAttribute="trailing" secondItem="4jR-0E-i32" secondAttribute="trailing" id="kKK-E6-Gue"/>
+                            <constraint firstItem="1QI-jn-M8C" firstAttribute="bottom" secondItem="GSX-0z-2Xd" secondAttribute="bottom" constant="20" id="kbX-1p-fr4"/>
+                            <constraint firstItem="GSX-0z-2Xd" firstAttribute="top" secondItem="dKr-dB-4vW" secondAttribute="bottom" constant="14" id="lJs-kB-ari"/>
+                            <constraint firstItem="4jR-0E-i32" firstAttribute="leading" secondItem="XBS-YB-7LS" secondAttribute="leading" id="wl4-7U-mjI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="4jR-0E-i32" id="tum-to-Veg"/>
+                        <outlet property="getStartedButton" destination="GSX-0z-2Xd" id="s36-vM-dng"/>
+                        <outlet property="pageControl" destination="dKr-dB-4vW" id="adH-uK-7Py"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aew-TT-EH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312" y="104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="grayText">
+            <color red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="redBg">
+            <color red="0.79607843137254897" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bst-cc-9MG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="S5S-Lv-9uk">
+            <objects>
+                <viewController id="bst-cc-9MG" customClass="WelcomeViewController" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gws-ec-K2o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By helping support organizations directly, you’re ensuring they never lose a cent to fees." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fep-0S-NU5">
+                                <rect key="frame" x="40" y="399" width="334" height="30.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" name="darkGrayText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cp-j9-O9v">
+                                <rect key="frame" x="30" y="345" width="354" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRM-VU-5E6" customClass="RoundedButtonWithShadow" customModule="Lend" customModuleProvider="target">
+                                <rect key="frame" x="95" y="473.5" width="224" height="53"/>
+                                <color key="backgroundColor" name="redBg"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="Xsz-AR-9sq"/>
+                                    <constraint firstAttribute="height" constant="53" id="zxK-ru-wun"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Get started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getStartedButtonPressed:" destination="bst-cc-9MG" eventType="touchUpInside" id="OVQ-ab-ZT4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="boW-mq-vW4"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2cp-j9-O9v" firstAttribute="centerX" secondItem="gws-ec-K2o" secondAttribute="centerX" id="5vT-P3-sOV"/>
+                            <constraint firstItem="CRM-VU-5E6" firstAttribute="top" secondItem="fep-0S-NU5" secondAttribute="bottom" constant="44" id="GE0-dX-aKx"/>
+                            <constraint firstItem="fep-0S-NU5" firstAttribute="centerY" secondItem="gws-ec-K2o" secondAttribute="centerY" constant="-34" id="S9z-2V-nZN"/>
+                            <constraint firstItem="fep-0S-NU5" firstAttribute="centerX" secondItem="gws-ec-K2o" secondAttribute="centerX" id="TN2-p9-SDF"/>
+                            <constraint firstItem="2cp-j9-O9v" firstAttribute="leading" secondItem="gws-ec-K2o" secondAttribute="leading" constant="30" id="V4h-zJ-YDo"/>
+                            <constraint firstItem="fep-0S-NU5" firstAttribute="leading" secondItem="gws-ec-K2o" secondAttribute="leading" constant="40" id="aIz-r8-aE1"/>
+                            <constraint firstItem="CRM-VU-5E6" firstAttribute="centerX" secondItem="gws-ec-K2o" secondAttribute="centerX" id="fun-ia-bJf"/>
+                            <constraint firstItem="fep-0S-NU5" firstAttribute="top" secondItem="2cp-j9-O9v" secondAttribute="bottom" constant="30" id="meu-zQ-PJ2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="CRM-VU-5E6" id="0nt-Cj-crP"/>
+                        <outlet property="welcomeLabel" destination="2cp-j9-O9v" id="GuA-fi-gQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0g6-e1-k1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="darkGrayText">
+            <color red="0.51372549019607838" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="redBg">
+            <color red="0.79607843137254897" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="Lend" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="3hv-TV-R6R"/>
+                <outlet property="errorIcon" destination="iVW-E9-uyq" id="FBS-C2-w4k"/>
+                <outlet property="errorLabel" destination="1T9-OX-20z" id="XNd-gb-LmD"/>
+                <outlet property="roundedViewWithShadow" destination="gow-PY-3gI" id="lvJ-FM-ijV"/>
+                <outlet property="textField" destination="HF0-gY-syP" id="ooj-eE-vUl"/>
+                <outlet property="titleLabel" destination="L3y-om-NJZ" id="BrK-St-gkB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" userLabel="ContentView">
+            <rect key="frame" x="0.0" y="0.0" width="573" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3y-om-NJZ">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="14.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="iVW-E9-uyq">
+                    <rect key="frame" x="88" y="1.5" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="45f-GD-hCe"/>
+                        <constraint firstAttribute="width" secondItem="iVW-E9-uyq" secondAttribute="height" multiplier="1:1" id="Px7-Do-BbN"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gow-PY-3gI" customClass="RoundedViewWithShadow" customModule="Lend" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="24.5" width="573" height="56"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-gY-syP">
+                            <rect key="frame" x="10" y="19" width="553" height="18"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" name="lightGray"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="HfK-Ia-fsq"/>
+                        <constraint firstItem="HF0-gY-syP" firstAttribute="centerX" secondItem="gow-PY-3gI" secondAttribute="centerX" id="OT6-gu-HxA"/>
+                        <constraint firstItem="HF0-gY-syP" firstAttribute="leading" secondItem="gow-PY-3gI" secondAttribute="leading" constant="10" id="Q8C-0D-3IA"/>
+                        <constraint firstItem="HF0-gY-syP" firstAttribute="centerY" secondItem="gow-PY-3gI" secondAttribute="centerY" id="YCi-Mq-bZr"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1T9-OX-20z" userLabel="ErrorLabel">
+                    <rect key="frame" x="0.0" y="80.5" width="52" height="14.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                    <color key="textColor" name="redBg"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gow-PY-3gI" secondAttribute="trailing" id="6o2-kd-BId"/>
+                <constraint firstItem="1T9-OX-20z" firstAttribute="top" secondItem="gow-PY-3gI" secondAttribute="bottom" id="Dwx-B7-uMR"/>
+                <constraint firstItem="L3y-om-NJZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zl6-Vw-ddQ"/>
+                <constraint firstItem="gow-PY-3gI" firstAttribute="top" secondItem="L3y-om-NJZ" secondAttribute="bottom" constant="10" id="bQl-GY-6ba"/>
+                <constraint firstItem="iVW-E9-uyq" firstAttribute="leading" secondItem="L3y-om-NJZ" secondAttribute="trailing" constant="8" id="dGi-u0-DHO"/>
+                <constraint firstItem="iVW-E9-uyq" firstAttribute="centerY" secondItem="L3y-om-NJZ" secondAttribute="centerY" id="p4v-8k-d09"/>
+                <constraint firstItem="gow-PY-3gI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uFS-Ps-Z0l"/>
+                <constraint firstItem="1T9-OX-20z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vwr-D9-xlq"/>
+                <constraint firstItem="L3y-om-NJZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zxm-zH-J2x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="261.59420289855075" y="-104.79910714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="error" width="20" height="20"/>
+        <namedColor name="lightGray">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="redBg">
+            <color red="0.79607843137254897" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

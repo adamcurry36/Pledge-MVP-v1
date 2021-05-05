@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="srn-zq-Jac">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Donate Once Or MonthlyVC-->
+        <scene sceneID="wNl-ov-Ls2">
+            <objects>
+                <viewController id="srn-zq-Jac" customClass="ChooseDonateOnceOrMonthlyVC" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vDb-kO-vXD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-xy-j74" userLabel="TouchButton">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="touchButtonPressed:" destination="srn-zq-Jac" eventType="touchUpInside" id="wAt-1V-yu1"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbh-EB-WXf" userLabel="ContentView">
+                                <rect key="frame" x="20" y="329.5" width="374" height="237"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHV-g1-ngT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="178"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart locked" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-2e-JvJ">
+                                                <rect key="frame" x="162" y="20" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gvR-2e-JvJ" secondAttribute="height" multiplier="1:1" id="XE0-8L-fDL"/>
+                                                    <constraint firstAttribute="height" constant="50" id="xq1-m5-jNh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXY-uP-BEv">
+                                                <rect key="frame" x="86" y="91" width="202" height="41"/>
+                                                <string key="text">How many times 
+would you like to donate?</string>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gvR-2e-JvJ" firstAttribute="centerX" secondItem="VHV-g1-ngT" secondAttribute="centerX" id="6tE-MO-uR4"/>
+                                            <constraint firstAttribute="bottom" secondItem="PXY-uP-BEv" secondAttribute="bottom" constant="46" id="NBy-oE-6i2"/>
+                                            <constraint firstItem="gvR-2e-JvJ" firstAttribute="top" secondItem="VHV-g1-ngT" secondAttribute="top" constant="20" id="XEr-Qk-zyn"/>
+                                            <constraint firstItem="PXY-uP-BEv" firstAttribute="top" secondItem="gvR-2e-JvJ" secondAttribute="bottom" constant="21" id="eoE-gb-bLM"/>
+                                            <constraint firstItem="PXY-uP-BEv" firstAttribute="centerX" secondItem="VHV-g1-ngT" secondAttribute="centerX" id="ujb-H7-yUj"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg5-mw-9IE">
+                                        <rect key="frame" x="0.0" y="193" width="179" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="W6M-6d-Ysm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" title="Donate Once">
+                                            <color key="titleColor" name="grayText3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onesButtonPressed:" destination="srn-zq-Jac" eventType="touchUpInside" id="FlR-nQ-2EX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MUP-Yq-ZEI">
+                                        <rect key="frame" x="195" y="193" width="179" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Mhu-6N-STA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" title="Add to Monthly Giving">
+                                            <color key="titleColor" name="grayText3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="monthlyButtonPressed:" destination="srn-zq-Jac" eventType="touchUpInside" id="Jbi-nA-pj3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Kg5-mw-9IE" firstAttribute="leading" secondItem="Gbh-EB-WXf" secondAttribute="leading" id="0PL-gK-stc"/>
+                                    <constraint firstItem="MUP-Yq-ZEI" firstAttribute="leading" secondItem="Kg5-mw-9IE" secondAttribute="trailing" constant="16" id="9p3-7H-e3b"/>
+                                    <constraint firstItem="VHV-g1-ngT" firstAttribute="top" secondItem="Gbh-EB-WXf" secondAttribute="top" id="S0v-5q-X3s"/>
+                                    <constraint firstItem="Kg5-mw-9IE" firstAttribute="width" secondItem="MUP-Yq-ZEI" secondAttribute="width" id="US5-uj-kPY"/>
+                                    <constraint firstAttribute="bottom" secondItem="MUP-Yq-ZEI" secondAttribute="bottom" id="gCp-DS-ezH"/>
+                                    <constraint firstAttribute="trailing" secondItem="MUP-Yq-ZEI" secondAttribute="trailing" id="iq0-td-U0i"/>
+                                    <constraint firstItem="VHV-g1-ngT" firstAttribute="centerX" secondItem="Gbh-EB-WXf" secondAttribute="centerX" id="mDP-bR-blF"/>
+                                    <constraint firstItem="VHV-g1-ngT" firstAttribute="leading" secondItem="Gbh-EB-WXf" secondAttribute="leading" id="qKo-wu-ybI"/>
+                                    <constraint firstItem="Kg5-mw-9IE" firstAttribute="top" secondItem="VHV-g1-ngT" secondAttribute="bottom" constant="15" id="ss6-zU-N6U"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kg5-mw-9IE" secondAttribute="bottom" id="tHB-47-Iqb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UQQ-Gh-EZb"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gbh-EB-WXf" firstAttribute="centerX" secondItem="vDb-kO-vXD" secondAttribute="centerX" id="CpP-GA-86a"/>
+                            <constraint firstAttribute="trailing" secondItem="kWG-xy-j74" secondAttribute="trailing" id="G8T-9p-hfL"/>
+                            <constraint firstItem="Gbh-EB-WXf" firstAttribute="leading" secondItem="vDb-kO-vXD" secondAttribute="leading" constant="20" id="KeG-lt-STf"/>
+                            <constraint firstItem="kWG-xy-j74" firstAttribute="top" secondItem="vDb-kO-vXD" secondAttribute="top" id="L0l-A0-SYO"/>
+                            <constraint firstItem="Gbh-EB-WXf" firstAttribute="centerY" secondItem="vDb-kO-vXD" secondAttribute="centerY" id="MDy-jU-fJW"/>
+                            <constraint firstItem="kWG-xy-j74" firstAttribute="leading" secondItem="vDb-kO-vXD" secondAttribute="leading" id="XF2-vb-Ieb"/>
+                            <constraint firstAttribute="bottom" secondItem="kWG-xy-j74" secondAttribute="bottom" id="lIM-CS-PxY"/>
+                            <constraint firstAttribute="trailing" secondItem="Gbh-EB-WXf" secondAttribute="trailing" constant="20" id="wKS-Za-L96"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoView" destination="VHV-g1-ngT" id="3fL-26-W7K"/>
+                        <outlet property="monthlyButton" destination="MUP-Yq-ZEI" id="db6-9y-36S"/>
+                        <outlet property="onceButton" destination="Kg5-mw-9IE" id="56x-IT-241"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3Z-jq-Cw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327.536231884058" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart locked" width="49" height="49"/>
+        <namedColor name="grayText3">
+            <color red="0.43529411764705883" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

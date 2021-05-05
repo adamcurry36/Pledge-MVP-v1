@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIL-rr-cM0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Tabbar View Controller-->
+        <scene sceneID="D5E-v1-jhP">
+            <objects>
+                <viewController id="cIL-rr-cM0" customClass="CustomTabbarViewController" customModule="Lend" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aoS-vR-NXy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-QX-iFG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="822"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rzt-Vh-ay6" userLabel="Tabbar">
+                                <rect key="frame" x="0.0" y="822" width="414" height="74"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKN-T1-diI">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                        <color key="backgroundColor" name="graySeparator"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Pip-Bu-Y6W"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-yk-3yh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="grayTabbarBg"/>
+                                <constraints>
+                                    <constraint firstItem="rKN-T1-diI" firstAttribute="leading" secondItem="Rzt-Vh-ay6" secondAttribute="leading" id="1gy-1Z-dkQ"/>
+                                    <constraint firstItem="rKN-T1-diI" firstAttribute="top" secondItem="Rzt-Vh-ay6" secondAttribute="top" id="9m8-vi-2dG"/>
+                                    <constraint firstItem="5Ue-yk-3yh" firstAttribute="centerX" secondItem="Rzt-Vh-ay6" secondAttribute="centerX" id="JZT-33-3yg"/>
+                                    <constraint firstItem="5Ue-yk-3yh" firstAttribute="leading" secondItem="Rzt-Vh-ay6" secondAttribute="leading" id="frY-mc-0NF"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Ue-yk-3yh" secondAttribute="bottom" id="ixC-qM-fWn"/>
+                                    <constraint firstAttribute="trailing" secondItem="rKN-T1-diI" secondAttribute="trailing" id="qlt-pf-ZKb"/>
+                                    <constraint firstAttribute="height" constant="74" id="rUZ-e2-VL8"/>
+                                    <constraint firstItem="5Ue-yk-3yh" firstAttribute="top" secondItem="Rzt-Vh-ay6" secondAttribute="top" id="tTF-uj-jmS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a5Y-Jz-ufL"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DSe-QX-iFG" secondAttribute="trailing" id="7Jx-6v-HZi"/>
+                            <constraint firstItem="Rzt-Vh-ay6" firstAttribute="leading" secondItem="aoS-vR-NXy" secondAttribute="leading" id="9Mi-iN-e3c"/>
+                            <constraint firstItem="DSe-QX-iFG" firstAttribute="top" secondItem="aoS-vR-NXy" secondAttribute="top" id="BP1-d5-Yr1"/>
+                            <constraint firstAttribute="trailing" secondItem="Rzt-Vh-ay6" secondAttribute="trailing" id="Fq5-FJ-8Jt"/>
+                            <constraint firstItem="Rzt-Vh-ay6" firstAttribute="top" secondItem="DSe-QX-iFG" secondAttribute="bottom" id="Zgq-QU-Kfp"/>
+                            <constraint firstItem="DSe-QX-iFG" firstAttribute="leading" secondItem="aoS-vR-NXy" secondAttribute="leading" id="qA3-PY-3GV"/>
+                            <constraint firstAttribute="bottom" secondItem="Rzt-Vh-ay6" secondAttribute="bottom" id="wYY-S6-IQU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="DSe-QX-iFG" id="1Pp-tG-E7F"/>
+                        <outlet property="tabbarHeightConstraint" destination="rUZ-e2-VL8" id="7Ty-vh-nMU"/>
+                        <outlet property="tabbarStackView" destination="5Ue-yk-3yh" id="AfB-co-EDO"/>
+                        <outlet property="tabbarView" destination="Rzt-Vh-ay6" id="uDu-H2-4PZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwB-4a-kLF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1265.217391304348" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="graySeparator">
+            <color red="0.76470588235294112" green="0.80392156862745101" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grayTabbarBg">
+            <color red="0.99607843137254903" green="1" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

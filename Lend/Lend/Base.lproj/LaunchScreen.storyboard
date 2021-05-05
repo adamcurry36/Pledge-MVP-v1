@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-a7-3ZO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-oi-Zp5">
+                                <rect key="frame" x="165" y="258.5" width="84" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="B0w-eh-FaZ"/>
+                                    <constraint firstAttribute="width" secondItem="gy5-oi-Zp5" secondAttribute="height" multiplier="74:97" id="gKb-cu-fSV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pledge." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jho-5E-wJ0">
+                                <rect key="frame" x="146.5" y="388.5" width="121.5" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gy5-oi-Zp5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1dK-TW-Zc2"/>
+                            <constraint firstItem="dbc-a7-3ZO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="69v-Ze-DuX"/>
+                            <constraint firstItem="jho-5E-wJ0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ERE-HJ-aLp"/>
+                            <constraint firstAttribute="bottom" secondItem="dbc-a7-3ZO" secondAttribute="bottom" id="GuS-2o-eg5"/>
+                            <constraint firstItem="jho-5E-wJ0" firstAttribute="top" secondItem="gy5-oi-Zp5" secondAttribute="bottom" constant="20" id="OH2-Pq-6Dx"/>
+                            <constraint firstItem="gy5-oi-Zp5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="Sf2-hq-s8N"/>
+                            <constraint firstItem="dbc-a7-3ZO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dSW-tJ-3w0"/>
+                            <constraint firstAttribute="trailing" secondItem="dbc-a7-3ZO" secondAttribute="trailing" id="wbW-Ah-q47"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gradient" width="250" height="541.33331298828125"/>
+        <image name="Launch" width="73.666664123535156" height="97"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

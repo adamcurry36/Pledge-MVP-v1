@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YS8-ti-Tb4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Alert View Controller-->
+        <scene sceneID="qsu-F6-WOi">
+            <objects>
+                <viewController id="YS8-ti-Tb4" customClass="CustomAlertViewController" customModule="AWallpapers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6y-Io-0mW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nyg-tK-m9E">
+                                <rect key="frame" x="167" y="348" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6NG-jS-lh3"/>
+                                    <constraint firstAttribute="width" secondItem="nyg-tK-m9E" secondAttribute="height" multiplier="1:1" id="fOJ-uY-TZE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="245-HS-2dX">
+                                <rect key="frame" x="20" y="448" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUt-am-Uzw" userLabel="Touch Button">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <action selector="touchButtonPressed:" destination="YS8-ti-Tb4" eventType="touchUpInside" id="7me-pe-TZv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gR8-lg-lwB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gUt-am-Uzw" firstAttribute="top" secondItem="k6y-Io-0mW" secondAttribute="top" id="1C2-Dw-f2F"/>
+                            <constraint firstItem="245-HS-2dX" firstAttribute="centerX" secondItem="k6y-Io-0mW" secondAttribute="centerX" id="1GT-cR-bmk"/>
+                            <constraint firstItem="nyg-tK-m9E" firstAttribute="centerX" secondItem="k6y-Io-0mW" secondAttribute="centerX" id="Jrh-Vc-Q1Z"/>
+                            <constraint firstAttribute="trailing" secondItem="gUt-am-Uzw" secondAttribute="trailing" id="Mo7-Ff-5G1"/>
+                            <constraint firstItem="245-HS-2dX" firstAttribute="leading" secondItem="k6y-Io-0mW" secondAttribute="leading" constant="20" id="Vmc-hH-Kvv"/>
+                            <constraint firstItem="gUt-am-Uzw" firstAttribute="leading" secondItem="k6y-Io-0mW" secondAttribute="leading" id="Vvh-5v-ZJX"/>
+                            <constraint firstItem="245-HS-2dX" firstAttribute="top" secondItem="nyg-tK-m9E" secondAttribute="bottom" constant="20" id="Yz1-Yd-ScC"/>
+                            <constraint firstAttribute="bottom" secondItem="gUt-am-Uzw" secondAttribute="bottom" id="kXJ-is-gr0"/>
+                            <constraint firstItem="nyg-tK-m9E" firstAttribute="centerY" secondItem="k6y-Io-0mW" secondAttribute="centerY" constant="-60" id="wsJ-da-at1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iconImageView" destination="nyg-tK-m9E" id="gAP-Uh-nVI"/>
+                        <outlet property="messageLabel" destination="245-HS-2dX" id="3db-hz-n7O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klh-Xq-cG2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343.47826086956525" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+</document>
