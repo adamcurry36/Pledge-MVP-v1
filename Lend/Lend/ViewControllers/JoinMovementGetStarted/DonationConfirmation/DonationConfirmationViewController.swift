@@ -11,7 +11,7 @@ class DonationConfirmationViewController: UIViewController {
     
     @IBOutlet weak var getStartedButton: RoundedButtonWithShadow!
     
-    var cause: Cause!
+    var organisationOrCause: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class DonationConfirmationViewController: UIViewController {
     
     @IBAction func getStartedButtonPressed(_ sender: Any) {
         let vc = Coordinator.instantiateHowMonthlyGivenWorksVC()
-        vc.cause = cause
+        vc.organisationOrCause = organisationOrCause
         navigationController?.pushViewController(vc, animated: true)
     }
     

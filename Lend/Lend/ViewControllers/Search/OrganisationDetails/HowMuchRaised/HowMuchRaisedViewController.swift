@@ -55,7 +55,7 @@ class HowMuchRaisedViewController: UIViewController {
             if let donates = data {
                 self.updateUI(donates: donates)
             } else {
-                self.showAlert(message: Constants.Error.unexpectedError, type: .error)
+                self.showToastAlert(message: Constants.Error.unexpectedError, type: .error)
             }
         }
     }

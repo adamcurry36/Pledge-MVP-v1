@@ -14,23 +14,24 @@ class OrganisationTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
-    @IBOutlet weak var chevronIconImageView: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuButtonWidth: NSLayoutConstraint!
     
     var onMenuAction: (()->Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     func configureWith(data: OrganisationItem, showMenu: Bool) {
         if showMenu {
-            chevronIconImageView.isHidden = true
             menuButton.isHidden = false
+            menuButtonWidth.constant = 44
         } else {
-            chevronIconImageView.isHidden = false
             menuButton.isHidden = true
+            menuButtonWidth.constant = 16
         }
         
         imgView.sd_setImage(with: data.imageUrl)

@@ -144,7 +144,7 @@ class MyImpactsViewController: UIViewController {
         let vc = Coordinator.instantiateMyBucketVC()
         vc.isCompleteDonation = true
         if let model = UserManager.shared.completeDonation {
-            vc.isOneTimePaymentMode = model.isOneTimePaymentMode
+            vc.isOneTimePaymentMode = model.type == .once
         }
         Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
         navigationController?.pushViewController(vc, animated: true)

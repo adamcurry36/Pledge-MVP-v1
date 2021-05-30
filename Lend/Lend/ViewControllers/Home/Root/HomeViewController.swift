@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
             completeDonationButton.isHidden = false
             
             var amount: Int = 0
-            if completeDonationModel.isOneTimePaymentMode {
+            if completeDonationModel.type == .once {
                 amount = UserManager.shared.oneTimeDonateAmout
             } else {
                 amount = UserManager.shared.tmpDonateAmount ?? UserManager.shared.defaultDonateAmount
@@ -93,76 +93,20 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showChooseSumToDonate(cause: Cause) {
-        let vc = Coordinator.instantiateDonateCauseVC()
-        vc.cause = cause
-        Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func showBacket(cause: Cause, isOneTimePayment: Bool) {
-        let vc = Coordinator.instantiateMyBucketVC()
-        vc.cause = cause
-        vc.isOneTimePaymentMode = isOneTimePayment
-        Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func showDonationConfirmation(cause: Cause) {
-        let vc = Coordinator.instantiateDonationConfirmationVC()
-        vc.cause = cause
-        Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func showDetails(cause: Cause) {
         let storyboard = UIStoryboard(name: "CauseDetails", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! CauseDetailsViewController
         vc.cause = cause
-
-        let nc = UINavigationController(rootViewController: vc)
-        nc.setNavigationBarHidden(true, animated: false)
-        present(nc, animated: true, completion: nil)
-    }
-    
-    func showAdjustOneTimePaymentAmount(cause: Cause) {
-        let vc = Coordinator.instantiateAdjustDonateAmountVC()
-        vc.causeOrOrganisationToPayOneTime = cause
-        vc.isOneTimePaymentMode = true
-        vc.donateAmount = UserManager.shared.oneTimeDonateAmout
         Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func donateCause(_ cause: Cause) {
-        let vc = Coordinator.instantiateChooseDonateOnceOrMonthlyVC()
-        vc.onOnceAction = { [weak self] in
-            if let completeDonation = UserManager.shared.completeDonation, completeDonation.isOneTimePaymentMode {
-                self?.showBacket(cause: cause, isOneTimePayment: true)
-            } else {
-                self?.showAdjustOneTimePaymentAmount(cause: cause)
-            }
-        }
-        
-        vc.onMonthlyAction = { [weak self] in
-            if UserManager.shared.shouldSetAmount  {
-                self?.showDonationConfirmation(cause: cause)
-            } else {
-                self?.showBacket(cause: cause, isOneTimePayment: false)
-            }
-        }
-        
-        presentOverFullScreen(vc)
-    }
-    
     @IBAction func completeDonationButtonPressed(_ sender: Any) {
-        guard UserManager.shared.completeDonation != nil else { return }
+        guard let completeDonation = UserManager.shared.completeDonation else { return }
         
         let vc = Coordinator.instantiateMyBucketVC()
         vc.isCompleteDonation = true
-        if let model = UserManager.shared.completeDonation {
-            vc.isOneTimePaymentMode = model.isOneTimePaymentMode
-        }
+        vc.isOneTimePaymentMode = completeDonation.type == .once
         Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -197,8 +141,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                       let idp = tableView.indexPath(for: cell),
                       let cause = self.tableData[idp.row] as? Cause
                 else { return }
-                
-                self.donateCause(cause)
+                self.showDonateCauseFlow(cause)
             }
             return cell
         }

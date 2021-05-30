@@ -56,7 +56,7 @@ class DonateConfirmationViewController: UIViewController {
 
         var queryCount: Int = 0
         var isError: Bool = false
-
+        
         for item in donateItems {
             if let donateId = item.donateId {
                 if item.amount > 0  {

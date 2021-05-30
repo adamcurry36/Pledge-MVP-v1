@@ -18,6 +18,7 @@ class MyBucketTableViewCell: UITableViewCell {
     
     var onSliderActionMoved: ((Int)->Void)?
     var onSliderActionEnded: ((Int)->Void)?
+    var onDeleteAction: (()->Void)?
     
     private var roundedSliderValue: Int {
         return Int(round(slider.value))
@@ -54,6 +55,10 @@ class MyBucketTableViewCell: UITableViewCell {
             nameLabel.textColor = .black
             amountLabel.textColor = .black
         }
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        onDeleteAction?()
     }
     
     @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum DonateType {
+    case once, monthly
+}
+
+
 struct OrganisationWithAmount {
     var amount: Int
     let organisation: OrganisationItem
@@ -15,5 +20,5 @@ struct OrganisationWithAmount {
 
 struct BucketModel {
     let donatedOrganisations: [OrganisationWithAmount]
-    let isOneTimePaymentMode: Bool
+    let type: DonateType
 }

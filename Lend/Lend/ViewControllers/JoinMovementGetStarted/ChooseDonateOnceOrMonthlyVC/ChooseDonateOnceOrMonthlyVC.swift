@@ -13,8 +13,7 @@ class ChooseDonateOnceOrMonthlyVC: UIViewController {
     @IBOutlet weak var onceButton: UIButton!
     @IBOutlet weak var monthlyButton: UIButton!
     
-    var onOnceAction: (()->Void)?
-    var onMonthlyAction: (()->Void)?
+    var onDonateTypeSelected: ((DonateType)->Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +29,14 @@ class ChooseDonateOnceOrMonthlyVC: UIViewController {
     }
     
     @IBAction func onesButtonPressed(_ sender: Any) {
-        onOnceAction?()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.onDonateTypeSelected?(.once)
+        }
     }
     
     @IBAction func monthlyButtonPressed(_ sender: Any) {
-        onMonthlyAction?()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.onDonateTypeSelected?(.monthly)
+        }
     }
 }

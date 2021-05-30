@@ -57,7 +57,7 @@ class AdjustDonateAmountViewController: UIViewController {
             if let cause = causeOrOrganisationToPayOneTime as? Cause {
                 vc.cause = cause
             } else if let org = causeOrOrganisationToPayOneTime as? OrganisationItem {
-                 //todo:
+                vc.organizations = [org]
             }
             navigationController?.pushViewController(vc, animated: true)
         } else {

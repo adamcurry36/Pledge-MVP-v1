@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(message: String, type: AlertType = .none, controllerToDismiss: UIViewController? = nil, onDismiss: (()->Void)? = nil) {
+    func showToastAlert(message: String, type: AlertType = .none, controllerToDismiss: UIViewController? = nil, onDismiss: (()->Void)? = nil) {
         let storyboard = UIStoryboard(name: "CustomAlert", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! CustomAlertViewController
         let dismissBlock = {
@@ -37,8 +37,31 @@ extension UIViewController {
         }
     }
     
+    func showAlert(message: String, title: String = "", options: [String], firstOptionStyle: UIAlertAction.Style? = nil, completion: ((String?) -> Void)? = nil) {
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        for option in options {
+            let style:UIAlertAction.Style
+
+            if let firstStyle = firstOptionStyle, option == options.first {
+                style = firstStyle
+            } else {
+                style = .default
+            }
+
+            let action = UIAlertAction(title: option, style: style) { action in
+                completion?(action.title)
+            }
+
+            alert.addAction(action)
+        }
+
+        present(alert, animated: true)
+    }
+    
     func showNetworkErrorAlert(onDismiss: (()->Void)? = nil) {
-        showAlert(message: Constants.Error.unexpectedError, type: .error, onDismiss: onDismiss)
+        showToastAlert(message: Constants.Error.unexpectedError, type: .error, onDismiss: onDismiss)
     }
     
     func presentOverFullScreen(_ vc: UIViewController) {

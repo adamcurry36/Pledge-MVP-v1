@@ -47,17 +47,13 @@ struct Cause {
     let description: String
     
     init?(_ document: DocumentSnapshot) {
-        guard
-            let data = document.data(),
-            let regulary = data[CauseKey.regulary] as? Bool,
-            let intState = data[CauseKey.state] as? Int
-        else { return nil }
+        guard let data = document.data() else { return nil }
         
         self.id = document.documentID
         self.imageUrl = URL(string: data[CauseKey.imageUrl] as? String ?? "")
         self.name = data[CauseKey.name] as? String ?? ""
-        self.regulary = regulary
-        self.state = State(intValue: intState)
+        self.regulary = data[CauseKey.regulary] as? Bool ?? false
+        self.state = State(intValue: data[CauseKey.state] as? Int ?? 0)
         self.description = data[CauseKey.description] as? String ?? ""
     }
 }

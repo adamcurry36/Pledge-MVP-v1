@@ -38,6 +38,7 @@
 		FA2E24C225BC5EBB00F75CCC /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E24C025BC5EBB00F75CCC /* CustomAlertViewController.swift */; };
 		FA2E24C325BC5EBB00F75CCC /* CustomAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2E24C125BC5EBB00F75CCC /* CustomAlert.storyboard */; };
 		FA436D8725BEE4BC00FDA88E /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA436D8625BEE4BC00FDA88E /* AppColor.swift */; };
+		FA46BA642646DE2D00E3CE6A /* UIViewController+DonateFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46BA632646DE2D00E3CE6A /* UIViewController+DonateFlow.swift */; };
 		FA4EB840261345560071009C /* CauseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4EB83E261345560071009C /* CauseTableViewCell.swift */; };
 		FA4EB841261345560071009C /* CauseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4EB83F261345560071009C /* CauseTableViewCell.xib */; };
 		FA4EB84F261369560071009C /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4EB84E261369560071009C /* Cause.swift */; };
@@ -201,6 +202,7 @@
 		FA2E24C025BC5EBB00F75CCC /* CustomAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		FA2E24C125BC5EBB00F75CCC /* CustomAlert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomAlert.storyboard; sourceTree = "<group>"; };
 		FA436D8625BEE4BC00FDA88E /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		FA46BA632646DE2D00E3CE6A /* UIViewController+DonateFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DonateFlow.swift"; sourceTree = "<group>"; };
 		FA4EB83E261345560071009C /* CauseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauseTableViewCell.swift; sourceTree = "<group>"; };
 		FA4EB83F261345560071009C /* CauseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CauseTableViewCell.xib; sourceTree = "<group>"; };
 		FA4EB84E261369560071009C /* Cause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cause.swift; sourceTree = "<group>"; };
@@ -759,6 +761,7 @@
 				FA93FF8025AA03150019FF60 /* UIView.swift */,
 				FA918A2D25F3B81B00F9B9C5 /* UIButton.swift */,
 				FA9E340925B0668D000F876D /* UIViewController.swift */,
+				FA46BA632646DE2D00E3CE6A /* UIViewController+DonateFlow.swift */,
 				FA58AA0B25C036E000641CA2 /* Array.swift */,
 				FABC871C25F943F8006B30A5 /* UIColor.swift */,
 			);
@@ -1429,6 +1432,7 @@
 				FAE5227525B86FBD0010B6E5 /* CustomTabbarViewController.swift in Sources */,
 				FAAAD486263AE717009CA960 /* ScoreTableViewCell.swift in Sources */,
 				FA00E6DA25AA197000887B48 /* Validator.swift in Sources */,
+				FA46BA642646DE2D00E3CE6A /* UIViewController+DonateFlow.swift in Sources */,
 				FAF0DB70263B19360014D384 /* HowMonthlyGivenWorksVC.swift in Sources */,
 				FABC871D25F943F8006B30A5 /* UIColor.swift in Sources */,
 				FA046AC626247D3600FE3FAE /* AdjustDonateAmountViewController.swift in Sources */,
@@ -1613,7 +1617,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lend/Lend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JZHT94XFV6;
 				INFOPLIST_FILE = Lend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1637,7 +1641,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lend/Lend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JZHT94XFV6;
 				INFOPLIST_FILE = Lend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

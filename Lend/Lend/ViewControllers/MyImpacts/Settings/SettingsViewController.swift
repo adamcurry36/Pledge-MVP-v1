@@ -70,7 +70,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         if let error = FirestoreManager.shared.signOut() {
-            showAlert(message: error, type: .error)
+            showToastAlert(message: error, type: .error)
         } else {
             UserManager.shared.resetUserData()
             Coordinator.redirectToAuth()

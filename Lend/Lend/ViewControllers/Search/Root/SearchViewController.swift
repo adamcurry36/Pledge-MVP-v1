@@ -71,7 +71,7 @@ class SearchViewController: UIViewController {
     }
     
     private func loadFilters() {
-        FirestoreManager.shared.fetchFilters { filters in
+        FirestoreManager.shared.fetchFilters(usingCache: true) { filters in
             guard let filters = filters else {
                 //todo: show Alert
                 return
@@ -119,7 +119,7 @@ class SearchViewController: UIViewController {
     private func showOrganisationDetails(_ organisation: OrganisationItem) {
         let storyboard = UIStoryboard(name: "OrganisationDetails", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! OrganisationDetailsViewController
-        vc.organization = organisation
+        vc.organisation = organisation
         
         Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
         navigationController?.pushViewController(vc, animated: true)

@@ -11,9 +11,8 @@ import SDWebImage
 class OrganisationDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addToBasketButton: UIButton!
     
-    var organization: OrganisationItem!
+    var organisation: OrganisationItem!
     var tableData: [Any] = []
     var headerCell: OrgHeaderTableViewCell?
     var onBackAction: (()->Void)?
@@ -27,37 +26,37 @@ class OrganisationDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addToBasketButton.layer.cornerRadius = 0.5 * addToBasketButton.bounds.height
         setupTableData()
         setupTableView()
+        loadImages()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     func setupTableData() {
         tableData.removeAll()
-        tableData.append(organization!)
-        if !organization.scores.isEmpty {
+        tableData.append(organisation!)
+        if !organisation.scores.isEmpty {
             tableData.append(keySectionHeaderScores)
-            tableData += organization.scores
+            tableData += organisation.scores
         }
         
-        if !organization.programs.isEmpty {
+        if !organisation.programs.isEmpty {
             tableData.append(keySectionHeaderPrograms)
-            tableData += organization.programs
+            tableData += organisation.programs
         }
-        if !organization.leaders.isEmpty {
+        if !organisation.leaders.isEmpty {
             tableData.append(keySectionHeaderBoardLeaderships)
-            tableData += organization.leaders
+            tableData += organisation.leaders
         }
-        if !organization.reviews.isEmpty {
+        if !organisation.reviews.isEmpty {
             tableData.append(keySectionHeaderCommunityReviews)
-            tableData += organization.reviews
+            tableData += organisation.reviews
         }
-        if !organization.financialMetrics.isEmpty {
-            tableData.append(keySectionHeaderFPM)
-            tableData.append("FinanceMetricsHeaderTableViewCell")
-            tableData += organization.financialMetrics
-        }
+//        if !organisation.financialMetrics.isEmpty {
+//            tableData.append(keySectionHeaderFPM)
+//            tableData.append("FinanceMetricsHeaderTableViewCell")
+//            tableData += organisation.financialMetrics
+//        }
     }
     
     func setupTableView() {
@@ -74,10 +73,39 @@ class OrganisationDetailsViewController: UIViewController {
         tableView.register(UINib(nibName: "FinanceMetricTableViewCell", bundle: nil), forCellReuseIdentifier: "FinanceMetricTableViewCell")
     }
     
-    func showDonate() {
-        let vc = Coordinator.instantiateDonateOrganizationVC()
-        vc.organization = organization
-        navigationController?.pushViewController(vc, animated: true)
+    func loadImages() {
+        var queryCount: Int = 0
+        var queryFinishedCount: Int = 0
+        
+        let queryFinishedHandler = {
+            queryFinishedCount += 1
+            
+            if queryCount == queryFinishedCount {
+                self.setupTableData()
+                self.tableView.reloadData()
+            }
+        }
+        
+        for (index, program) in organisation.programs.enumerated() {
+            if let imageUrl = program.infoImageUrl {
+                queryCount += 1
+                SDWebImageManager.shared.loadImage(with: imageUrl, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                    self.organisation.programs[index].infoImage = image
+                    queryFinishedHandler()
+                }
+            }
+        }
+        
+        for (index, leader) in organisation.leaders.enumerated() {
+            if let imageUrl = leader.infoImageUrl {
+                queryCount += 1
+                SDWebImageManager.shared.loadImage(with: imageUrl, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                    self.organisation.leaders[index].infoImage = image
+                    queryFinishedHandler()
+                }
+            }
+            
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -85,18 +113,8 @@ class OrganisationDetailsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func donate() {
-        if UserManager.shared.shouldSetAmount {
-            showDonate()
-        } else {
-            let vc = Coordinator.instantiateMyBucketVC()
-            vc.organizations = [organization]
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    @IBAction func addToBasketButtonPressed(_ sender: Any) {
-        //todo:
+    @IBAction func donateButtonPressed() {
+        showDonateOrganisationFlow(organisation)
     }
 }
 
@@ -116,7 +134,7 @@ extension OrganisationDetailsViewController: UITableViewDataSource, UITableViewD
             headerCell = cell
             cell.configureWith(data: orgItem)
             cell.onDonateAction = { [weak self] in
-                self?.donate()
+                self?.donateButtonPressed()
             }
             return cell
         }
@@ -143,7 +161,12 @@ extension OrganisationDetailsViewController: UITableViewDataSource, UITableViewD
         
         if let programItem = tableData[indexPath.row] as? OrganisationItem.Program {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OrgProgramTableViewCell", for: indexPath) as! OrgProgramTableViewCell
-            cell.configureWith(data: programItem)
+            var infoImageHeight: CGFloat = 0
+            if let image = programItem.infoImage {
+                let imageWidth = tableView.bounds.width - 2.0 * OrgProgramTableViewCell.infoImageViewLeading
+                infoImageHeight = imageWidth / (image.size.width / image.size.height)
+            }
+            cell.configureWith(data: programItem, infoImageHeight: infoImageHeight)
             return cell
         }
         
@@ -156,7 +179,12 @@ extension OrganisationDetailsViewController: UITableViewDataSource, UITableViewD
         
         if let leaderItem = tableData[indexPath.row] as? OrganisationItem.Leader {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderTableViewCell", for: indexPath) as! LeaderTableViewCell
-            cell.configureWith(data: leaderItem)
+            var infoImageHeight: CGFloat = 0
+            if let image = leaderItem.infoImage {
+                let imageWidth = tableView.bounds.width - 2.0 * LeaderTableViewCell.infoImageViewLeading
+                infoImageHeight = imageWidth / (image.size.width / image.size.height)
+            }
+            cell.configureWith(data: leaderItem, infoImageHeight: infoImageHeight)
             return cell
         }
         
@@ -179,17 +207,17 @@ extension OrganisationDetailsViewController: UITableViewDataSource, UITableViewD
             cell.configureWithTitle("Financial Performance Metrics")
             return cell
         }
-        
+
         if tableData[indexPath.row] as? String == "FinanceMetricsHeaderTableViewCell" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FinanceMetricsHeaderTableViewCell", for: indexPath) as! FinanceMetricsHeaderTableViewCell
             return cell
         }
-        
+
         if let metricItem = tableData[indexPath.row] as? OrganisationItem.FinanceMetric {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FinanceMetricTableViewCell", for: indexPath) as! FinanceMetricTableViewCell
             cell.configureWith(data: metricItem)
             return cell
-        }
+                }
         
         return UITableViewCell()
     }

@@ -131,9 +131,9 @@ class SignInViewController: UIViewController {
             
             strongSelf.view.stopActivityAnimating()
             if let error = error {
-                strongSelf.showAlert(message: error, type: .error)
+                strongSelf.showToastAlert(message: error, type: .error)
             } else {
-                strongSelf.showAlert(message: "Check the email to reset password", type: .success)//todo:  //check text
+                strongSelf.showToastAlert(message: "Check the email to reset password", type: .success)//todo:  //check text
             }
         }
     }

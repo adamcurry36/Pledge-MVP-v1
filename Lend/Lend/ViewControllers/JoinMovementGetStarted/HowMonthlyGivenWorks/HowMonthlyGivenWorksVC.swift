@@ -19,7 +19,7 @@ class HowMonthlyGivenWorksVC: UIViewController {
     @IBOutlet weak var labelContainer2_height: NSLayoutConstraint!
     @IBOutlet weak var labelContainer3_height: NSLayoutConstraint!
     
-    var cause: Cause!
+    var organisationOrCause: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class HowMonthlyGivenWorksVC: UIViewController {
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         let vc = Coordinator.instantiateChooseAmountStepOneVC()
-        vc.cause = cause
+        vc.organisationOrCause = organisationOrCause
         navigationController?.pushViewController(vc, animated: true)
     }
 }

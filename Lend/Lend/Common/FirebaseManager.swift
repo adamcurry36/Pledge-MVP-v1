@@ -148,7 +148,11 @@ class FirestoreManager {
         }
     }
     
-    func fetchFilters(completion: @escaping ([FilterItem]?)->Void) {
+    func fetchFilters(usingCache: Bool, completion: @escaping ([FilterItem]?)->Void) {
+        if usingCache, !filters.isEmpty {
+            return completion(filters)
+        }
+        
         db.collection(COLLECTION_FILTERS).getDocuments { snapshot, error in
             guard let snapshot = snapshot else { return completion(nil) }
 
@@ -167,16 +171,26 @@ class FirestoreManager {
                 guard let snapshot = snapshot else { return completion(nil) }
                 
                 let result = snapshot.documents.compactMap { OrganisationItem($0) }
-                completion(result)
+                if !result.isEmpty {
+                    self.fetchFilters(usingCache: true) { _ in
+                        self.addFiltersToOrganisations(result)
+                        completion(result)
+                    }
+                }
             }
     }
-    
+        
     func fetchOrganisations(completion: @escaping ([OrganisationItem]?, DocumentSnapshot?)->Void) {
         db.collection(COLLECTION_ORGANISATIONS).getDocuments { snapshot, error in
             guard let snapshot = snapshot else { return completion(nil, nil) }
             
             let result = snapshot.documents.compactMap { OrganisationItem($0) }
-            completion(result, snapshot.documents.last)
+            if !result.isEmpty {
+                self.fetchFilters(usingCache: true) { _ in
+                    self.addFiltersToOrganisations(result)
+                    completion(result, snapshot.documents.last)
+                }
+            }
         }
     }
     

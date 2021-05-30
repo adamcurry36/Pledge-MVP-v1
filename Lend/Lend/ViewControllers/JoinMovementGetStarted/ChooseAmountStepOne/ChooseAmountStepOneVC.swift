@@ -15,7 +15,7 @@ class ChooseAmountStepOneVC: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var maxDonateValueLabel: UILabel!
     
-    var cause: Cause!
+    var organisationOrCause: Any?
     var donateAmount: Int = 0
 
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class ChooseAmountStepOneVC: UIViewController {
     
     func showChooseRecipients() {
         let vc = Coordinator.instantiateChooseRecipientsVC()
-        vc.cause = cause
+        vc.organisationOrCause = organisationOrCause
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -50,7 +50,7 @@ class ChooseAmountStepOneVC: UIViewController {
             if success {
                 self.showChooseRecipients()
             } else {
-                self.showAlert(message: Constants.Error.unexpectedError, type: .error)
+                self.showToastAlert(message: Constants.Error.unexpectedError, type: .error)
             }
         }
     }

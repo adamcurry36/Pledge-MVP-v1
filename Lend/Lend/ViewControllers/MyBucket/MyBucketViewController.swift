@@ -26,12 +26,7 @@ class MyBucketViewController: UIViewController {
     var shouldShowTipsPopUpWhenAppear: Bool = false
     
     private var donates: [DonateItem] = []
-    private var tableData: [OrganisationWithAmount] = [] {
-        didSet {
-            tableView.reloadData()
-            updateUI()
-        }
-    }
+    private var tableData: [OrganisationWithAmount] = []
     private var paymentManager: PaymentManager?
 
     override func viewDidLoad() {
@@ -52,8 +47,10 @@ class MyBucketViewController: UIViewController {
         regualaryLabel.text = " One Time"
         donateAmount = UserManager.shared.oneTimeDonateAmout
         
-        if let completeDonation = UserManager.shared.completeDonation, completeDonation.isOneTimePaymentMode {
+        if let completeDonation = UserManager.shared.completeDonation, completeDonation.type == .once {
             tableData = UserManager.shared.completeDonation?.donatedOrganisations ?? []
+            tableView.reloadData()
+            updateUI()
         }
         loadData()
     }
@@ -63,11 +60,14 @@ class MyBucketViewController: UIViewController {
         donateAmount = (UserManager.shared.tmpDonateAmount ?? UserManager.shared.user?.defaultDonateAmount) ?? 0
         if let myImpactDonates = myImpactDonates {
             tableData = myImpactDonates.map { OrganisationWithAmount(amount: $0.amount, organisation: $0.organisation, donateId: $0.id) }
-        } else if let completeDonation = UserManager.shared.completeDonation, !completeDonation.isOneTimePaymentMode {
+        } else if let completeDonation = UserManager.shared.completeDonation, completeDonation.type == .monthly {
             tableData = completeDonation.donatedOrganisations
         } else {
             loadData()
         }
+        
+        tableView.reloadData()
+        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +121,7 @@ class MyBucketViewController: UIViewController {
         }
         
         if isOneTimePaymentMode {
-            if let completeDonatation = UserManager.shared.completeDonation, completeDonatation.isOneTimePaymentMode {
+            if let completeDonatation = UserManager.shared.completeDonation, completeDonatation.type == .once {
                 for cdItem in completeDonatation.donatedOrganisations {
                     if let index = tableDataResult.firstIndex(where: { $0.organisation.id == cdItem.organisation.id }) {
                         tableDataResult[index].amount = cdItem.amount
@@ -138,7 +138,7 @@ class MyBucketViewController: UIViewController {
                 tableDataResult.append(tableDataResultItem)
             }
             
-            if let completeDonatation = UserManager.shared.completeDonation, !completeDonatation.isOneTimePaymentMode {
+            if let completeDonatation = UserManager.shared.completeDonation, completeDonatation.type == .monthly {
                 for cdItem in completeDonatation.donatedOrganisations {
                     if let index = tableDataResult.firstIndex(where: { $0.organisation.id == cdItem.organisation.id }) {
                         tableDataResult[index].amount = cdItem.amount
@@ -206,7 +206,18 @@ class MyBucketViewController: UIViewController {
     func showDonateConfirmation(tips: Int) {
         let vc = Coordinator.instantiateDonateConfirmationVC()
         vc.donateAmount = donateAmount
-        vc.donateItems = tableData
+        
+        var toPassDonateItems = tableData
+        
+        if !isOneTimePaymentMode {
+            for donateItem in donates {
+                if !tableData.contains(where: { $0.organisation.id == donateItem.organisation.id }) {
+                    toPassDonateItems.append(OrganisationWithAmount(amount: 0, organisation: donateItem.organisation, donateId: donateItem.id))
+                }
+            }
+        }
+        
+        vc.donateItems = toPassDonateItems
         vc.tipsAmount = tips
         vc.isOneTimeMode = isOneTimePaymentMode
         navigationController?.pushViewController(vc, animated: true)
@@ -223,9 +234,9 @@ class MyBucketViewController: UIViewController {
     
     @IBAction func completeButtonPressed(_ sender: Any) {
         if isOneTimePaymentMode {
-            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, isOneTimePaymentMode: true)
+            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, type: .once)
         } else {
-            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, isOneTimePaymentMode: false)
+            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, type: .monthly)
             UserManager.shared.tmpDonateAmount = donateAmount
         }
         
@@ -234,9 +245,9 @@ class MyBucketViewController: UIViewController {
     
     @IBAction func keepBrowsingButtonPressed(_ sender: Any) {
         if isOneTimePaymentMode {
-            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, isOneTimePaymentMode: true)
+            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, type: .once)
         } else {
-            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, isOneTimePaymentMode: false)
+            UserManager.shared.completeDonation = BucketModel(donatedOrganisations: tableData, type: .monthly)
             UserManager.shared.tmpDonateAmount = donateAmount
         }
         
@@ -298,6 +309,14 @@ extension MyBucketViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.onSliderActionEnded = { [weak self] value in
             self?.tableView.reloadData()
+        }
+        
+        cell.onDeleteAction = { [weak self] in
+            guard let self = self, let indexPath = tableView.indexPath(for: cell) else { return }
+            
+            self.tableData.remove(at: indexPath.row)
+            self.tableView.reloadData()
+            self.updateUI()
         }
         
         return cell

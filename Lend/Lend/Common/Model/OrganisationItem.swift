@@ -12,6 +12,8 @@ class OrganisationItem {
     struct Leader {
         let avatarUrl: URL?
         let about: String
+        let infoImageUrl: URL?
+        var infoImage: UIImage?
         
         static func itemsFromData(_ data: Any?) -> [Leader] {
             guard let dataArr = data as? [[String:Any]] else { return [] }
@@ -21,6 +23,7 @@ class OrganisationItem {
         init(_ data: [String:Any]) {
             self.about = data["about"] as? String ?? ""
             self.avatarUrl = URL(string: (data["avatar"] as? String) ?? "")
+            self.infoImageUrl = URL(string: data["imageUrl"] as? String ?? "")
         }
     }
     
@@ -64,6 +67,8 @@ class OrganisationItem {
     struct Program {
         let name: String
         let about: String
+        let infoImageUrl: URL?
+        var infoImage: UIImage?
         
         static func itemsFromData(_ data: Any?) -> [Program] {
             guard let dataArr = data as? [[String:Any]] else { return [] }
@@ -73,6 +78,7 @@ class OrganisationItem {
         init(_ data: [String:Any]) {
             self.name = data["name"] as? String ?? ""
             self.about = data["description"] as? String ?? ""
+            self.infoImageUrl = URL(string: data["imageUrl"] as? String ?? "")
         }
     }
     
@@ -119,8 +125,8 @@ class OrganisationItem {
     let name: String
     let contacts: [ContactItem]
     let scores: [Score]
-    let leaders: [Leader]
-    let programs: [Program]
+    var leaders: [Leader]
+    var programs: [Program]
     let reviews: [Review]
     let financialMetrics: [FinanceMetric]
     let monthDonors: Int

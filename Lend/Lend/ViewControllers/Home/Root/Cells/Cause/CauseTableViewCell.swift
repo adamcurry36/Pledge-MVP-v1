@@ -20,8 +20,6 @@ class CauseTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         bannerImageView.layer.cornerRadius = 20
-        bannerImageView.layer.borderWidth = 1
-        bannerImageView.layer.borderColor = UIColor.gray.cgColor
         bgConainer.layer.cornerRadius = bannerImageView.layer.cornerRadius
     }
 

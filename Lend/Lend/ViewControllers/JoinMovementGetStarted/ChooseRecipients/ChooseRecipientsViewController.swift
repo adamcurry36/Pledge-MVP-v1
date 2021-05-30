@@ -11,7 +11,7 @@ class ChooseRecipientsViewController: UIViewController {
     
     @IBOutlet weak var createButton: UIButton!
     
-    var cause: Cause!
+    var organisationOrCause: Any?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +20,13 @@ class ChooseRecipientsViewController: UIViewController {
     
     func showBacket() {
         let vc = Coordinator.instantiateMyBucketVC()
-        vc.cause = cause
+        if let cause = organisationOrCause as? Cause {
+            vc.cause = cause
+        }
+        if let organisation = organisationOrCause as? OrganisationItem {
+            vc.organizations = [organisation]
+        }
+        
         Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }

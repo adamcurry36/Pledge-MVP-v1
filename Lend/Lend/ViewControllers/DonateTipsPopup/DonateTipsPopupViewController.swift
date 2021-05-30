@@ -59,7 +59,7 @@ class DonateTipsPopupViewController: UIViewController {
             self.peopleCountLabel.text = "Nobody's Donation"
         } else if tipsAmount == 1 {
             imageView.image = UIImage(named: "1")
-            self.peopleCountLabel.text = "1 People’s Donations"
+            self.peopleCountLabel.text = "1 Person’s donation"
         } else if tipsAmount == 2 {
             imageView.image = UIImage(named: "2")
             self.peopleCountLabel.text = "2 People’s Donations"
@@ -110,9 +110,7 @@ class DonateTipsPopupViewController: UIViewController {
         
         if value < 0 {
             value = 0
-        } else if value > Constants.maxTipsAmount {
-            value = Constants.maxTipsAmount
-        }
+        } 
         
         tipsAmount = value
         updateUI()
@@ -141,7 +139,6 @@ class DonateTipsPopupViewController: UIViewController {
     }
     
     @IBAction func plusButtonPressed(_ sender: Any) {
-        guard tipsAmount < Constants.maxTipsAmount else { return }
         tipsAmount += 1
         updateUI()
     }

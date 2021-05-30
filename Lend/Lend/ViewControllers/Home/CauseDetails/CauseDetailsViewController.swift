@@ -62,53 +62,26 @@ class CauseDetailsViewController: UIViewController {
         }
     }
     
-    func showDonate() {
-        let vc = Coordinator.instantiateDonateCauseVC()
-        vc.cause = cause
-        Coordinator.rootTabbar?.setTabbarHidden(true, animated: true)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func showMyBucket() {
-        let vc = Coordinator.instantiateMyBucketVC()
-        vc.cause = cause
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     private func showOrganisationDetails(_ organisation: OrganisationItem) {
         let storyboard = UIStoryboard(name: "OrganisationDetails", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! OrganisationDetailsViewController
-        vc.organization = organisation
+        vc.organisation = organisation
         
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func donateOrganisation(_ organisation: OrganisationItem) {
-        if UserManager.shared.shouldSetAmount {
-            let vc = Coordinator.instantiateDonateOrganizationVC()
-            vc.organization = organisation
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let vc = Coordinator.instantiateMyBucketVC()
-            vc.organizations = [organisation]
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
+
     
     private func shareOrganisation(_ organisation: OrganisationItem) {
         //todo:
     }
     
     @IBAction func donateButtonPressed(_ sender: Any) {
-        if UserManager.shared.shouldSetAmount {
-            showDonate()
-        } else {
-            showMyBucket()
-        }
+        showDonateCauseFlow(cause)
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func questionButtonPressed(_ sender: Any) {
@@ -136,7 +109,7 @@ extension CauseDetailsViewController: UITableViewDataSource, UITableViewDelegate
                 if index == 0 {
                     self.showOrganisationDetails(organisation)
                 } else if index == 1 {
-                    self.donateOrganisation(organisation)
+                    self.showDonateOrganisationFlow(organisation)
                 } else if index == 2 {
                     self.shareOrganisation(organisation)
                 }
