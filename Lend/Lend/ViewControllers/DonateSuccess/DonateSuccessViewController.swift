@@ -23,7 +23,7 @@ class DonateSuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.addGradiant(colors: [UIColor(named: "blue")!.cgColor, UIColor(named: "gradientGreen")!.cgColor])
+        view.addGradiant(colors: [AppColor.midBlue.value.cgColor, AppColor.gradientGreen.value.cgColor])
         shareButton.layer.cornerRadius = 0.5 * shareButton.bounds.height
         
         imageView.image = nil

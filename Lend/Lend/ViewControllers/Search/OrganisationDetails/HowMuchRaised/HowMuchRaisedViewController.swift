@@ -21,7 +21,7 @@ class HowMuchRaisedViewController: UIViewController {
         super.viewDidLoad()
 
         topBarTopConstaint.constant = safeAreaInsets.top == 0 ? 0 : 30
-        view.addGradiant(colors: [UIColor(named: "blue")!.cgColor, UIColor(named: "gradientGreen")!.cgColor])
+        view.addGradiant(colors: [AppColor.midBlue.value.cgColor, AppColor.gradientGreen.value.cgColor])
         imageView.sd_setImage(with: organisation.imageUrl)
         nameLabel.text = organisation.name
         

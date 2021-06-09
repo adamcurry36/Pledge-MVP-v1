@@ -14,7 +14,7 @@ let COLLECTION_FILTERS = "Fields"
 let COLLECTION_ORGANISATIONS = "Organisations"
 let COLLECTION_DONATES = "Donates"
 let COLLECTION_CAUSES = "Causes"
-let COLLECTION_PAYMENT_HYSTORY = "PaymentHystory"
+let COLLECTION_PAYMENT_HISTORY = "PaymentHystory"//todo: rename:history
 
 class FirestoreManager {
     static let shared: FirestoreManager = FirestoreManager()
@@ -265,10 +265,26 @@ class FirestoreManager {
         let data: [String:Any] = [DonateItemKey.amount : amount, DonateItemKey.organisation : organisationId, "date" : Timestamp(date: date)]
         db.collection(COLLECTION_USERS)
             .document(uid)
-            .collection(COLLECTION_PAYMENT_HYSTORY)
+            .collection(COLLECTION_PAYMENT_HISTORY)
             .addDocument(data: data) { error in
                 completion(error == nil)
             }
+    }
+    
+    func fetchPaymentHistory(_ completion: @escaping ([OrganisationItem]?)->Void) {
+        guard let uid = currentUser?.uid else {
+            Coordinator.redirectToAuth()
+            return completion(nil)
+        }
+        db.collection(COLLECTION_USERS).document(uid).collection(COLLECTION_PAYMENT_HISTORY).getDocuments { snapshot, _ in
+            guard let data = snapshot?.documents.compactMap({ $0[DonateItemKey.organisation] as? String }) else {
+                completion(nil)
+                return
+            }
+            self.fetchOrganisations(ids: data) { organisations in
+                completion(organisations)
+            }
+        }
     }
     
     //MARK: DONATES

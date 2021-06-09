@@ -46,6 +46,12 @@
 		FA50A98B263854D400B5E3DF /* OrgProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA50A989263854D400B5E3DF /* OrgProgramTableViewCell.xib */; };
 		FA50A9922638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50A9902638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.swift */; };
 		FA50A9932638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA50A9912638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.xib */; };
+		FA54A679266FB74C00C44EED /* PrevSupportedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54A677266FB74C00C44EED /* PrevSupportedCollectionViewCell.swift */; };
+		FA54A67A266FB74C00C44EED /* PrevSupportedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA54A678266FB74C00C44EED /* PrevSupportedCollectionViewCell.xib */; };
+		FA54A681266FDD5D00C44EED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54A680266FDD5D00C44EED /* ProfileViewController.swift */; };
+		FA54A685266FDD6C00C44EED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54A684266FDD6C00C44EED /* Profile.storyboard */; };
+		FA54A68B266FE72500C44EED /* CauseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54A689266FE72500C44EED /* CauseCollectionViewCell.swift */; };
+		FA54A68C266FE72500C44EED /* CauseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA54A68A266FE72500C44EED /* CauseCollectionViewCell.xib */; };
 		FA57A804263945E600AEB76C /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57A802263945E600AEB76C /* ReviewTableViewCell.swift */; };
 		FA57A805263945E600AEB76C /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA57A803263945E600AEB76C /* ReviewTableViewCell.xib */; };
 		FA57A80D26394C6700AEB76C /* FinanceMetricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57A80B26394C6700AEB76C /* FinanceMetricTableViewCell.swift */; };
@@ -87,6 +93,8 @@
 		FA93FF7C25AA02660019FF60 /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA93FF7B25AA02660019FF60 /* InputView.xib */; };
 		FA93FF8125AA03150019FF60 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93FF8025AA03150019FF60 /* UIView.swift */; };
 		FA93FF8425AA05B30019FF60 /* RoundedViewWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93FF8325AA05B30019FF60 /* RoundedViewWithShadow.swift */; };
+		FA9C848E266F92AE00731233 /* ImactDonationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C848C266F92AE00731233 /* ImactDonationCollectionViewCell.swift */; };
+		FA9C848F266F92AE00731233 /* ImactDonationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9C848D266F92AE00731233 /* ImactDonationCollectionViewCell.xib */; };
 		FA9D5E9B2614A9A10050CC9F /* MyBucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D5E9A2614A9A10050CC9F /* MyBucketViewController.swift */; };
 		FA9D5E9F2614A9C20050CC9F /* MyBucket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9D5E9E2614A9C20050CC9F /* MyBucket.storyboard */; };
 		FA9D5EA52614C4060050CC9F /* MyBucketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D5EA32614C4060050CC9F /* MyBucketTableViewCell.swift */; };
@@ -210,6 +218,12 @@
 		FA50A989263854D400B5E3DF /* OrgProgramTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrgProgramTableViewCell.xib; sourceTree = "<group>"; };
 		FA50A9902638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceMetricsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		FA50A9912638663000B5E3DF /* FinanceMetricsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceMetricsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		FA54A677266FB74C00C44EED /* PrevSupportedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevSupportedCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA54A678266FB74C00C44EED /* PrevSupportedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrevSupportedCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA54A680266FDD5D00C44EED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA54A684266FDD6C00C44EED /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		FA54A689266FE72500C44EED /* CauseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauseCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA54A68A266FE72500C44EED /* CauseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CauseCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA57A802263945E600AEB76C /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		FA57A803263945E600AEB76C /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		FA57A80B26394C6700AEB76C /* FinanceMetricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceMetricTableViewCell.swift; sourceTree = "<group>"; };
@@ -252,6 +266,8 @@
 		FA93FF7B25AA02660019FF60 /* InputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InputView.xib; path = Lend/Common/CustomViews/InputView.xib; sourceTree = SOURCE_ROOT; };
 		FA93FF8025AA03150019FF60 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Lend/Common/CustomViews/UIView.swift; sourceTree = SOURCE_ROOT; };
 		FA93FF8325AA05B30019FF60 /* RoundedViewWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViewWithShadow.swift; sourceTree = "<group>"; };
+		FA9C848C266F92AE00731233 /* ImactDonationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImactDonationCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA9C848D266F92AE00731233 /* ImactDonationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImactDonationCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA9D5E9A2614A9A10050CC9F /* MyBucketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketViewController.swift; sourceTree = "<group>"; };
 		FA9D5E9E2614A9C20050CC9F /* MyBucket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyBucket.storyboard; sourceTree = "<group>"; };
 		FA9D5EA32614C4060050CC9F /* MyBucketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBucketTableViewCell.swift; sourceTree = "<group>"; };
@@ -558,6 +574,34 @@
 			path = FinanceMetrixHeaderCell;
 			sourceTree = "<group>";
 		};
+		FA54A676266FB6E700C44EED /* PrevSupportedCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA54A678266FB74C00C44EED /* PrevSupportedCollectionViewCell.xib */,
+				FA54A677266FB74C00C44EED /* PrevSupportedCollectionViewCell.swift */,
+			);
+			path = PrevSupportedCell;
+			sourceTree = "<group>";
+		};
+		FA54A67F266FDBB100C44EED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FA54A688266FE6FE00C44EED /* Cells */,
+				FA54A684266FDD6C00C44EED /* Profile.storyboard */,
+				FA54A680266FDD5D00C44EED /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FA54A688266FE6FE00C44EED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA54A68A266FE72500C44EED /* CauseCollectionViewCell.xib */,
+				FA54A689266FE72500C44EED /* CauseCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		FA57A80126393FC600AEB76C /* ReviewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,8 +651,9 @@
 		FA58AA0E25C03C7300641CA2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				FA58AA1525C03CB700641CA2 /* ImpactTableViewCell.xib */,
-				FA58AA1425C03CB700641CA2 /* ImpactTableViewCell.swift */,
+				FA9C8485266F922600731233 /* DonationCell */,
+				FA54A676266FB6E700C44EED /* PrevSupportedCell */,
+				FA9C8482266F91FE00731233 /* ImpactCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -784,6 +829,24 @@
 				FA93FF5425A9D30F0019FF60 /* SignUpViewController.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		FA9C8482266F91FE00731233 /* ImpactCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA58AA1525C03CB700641CA2 /* ImpactTableViewCell.xib */,
+				FA58AA1425C03CB700641CA2 /* ImpactTableViewCell.swift */,
+			);
+			path = ImpactCell;
+			sourceTree = "<group>";
+		};
+		FA9C8485266F922600731233 /* DonationCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C848D266F92AE00731233 /* ImactDonationCollectionViewCell.xib */,
+				FA9C848C266F92AE00731233 /* ImactDonationCollectionViewCell.swift */,
+			);
+			path = DonationCell;
 			sourceTree = "<group>";
 		};
 		FA9D5E992614A9670050CC9F /* MyBucket */ = {
@@ -991,6 +1054,7 @@
 				FA16082825BB2FFB00B7ED43 /* Filters */,
 				FA58A9FC25C020AE00641CA2 /* Search */,
 				FA2E24B625BC4E3700F75CCC /* MyImpacts */,
+				FA54A67F266FDBB100C44EED /* Profile */,
 				FAB44E3C25B9CEBF00028943 /* DonateTipsPopup */,
 				FAAA5197263DC1B800F7BE59 /* DonateConfirmation */,
 				FAB44E4325B9D8EF00028943 /* DonateSuccess */,
@@ -1270,6 +1334,7 @@
 				FAAAD487263AE717009CA960 /* ScoreTableViewCell.xib in Resources */,
 				FA9D5E9F2614A9C20050CC9F /* MyBucket.storyboard in Resources */,
 				FA93FF7C25AA02660019FF60 /* InputView.xib in Resources */,
+				FA54A685266FDD6C00C44EED /* Profile.storyboard in Resources */,
 				FAC5A61E25F3DA7D003F5071 /* SuggestionBox.storyboard in Resources */,
 				FA57A805263945E600AEB76C /* ReviewTableViewCell.xib in Resources */,
 				FA2E24BC25BC4E7F00F75CCC /* MyImpacts.storyboard in Resources */,
@@ -1284,6 +1349,7 @@
 				FAF0DB6D263B18ED0014D384 /* HowMonthlyGivenWorks.storyboard in Resources */,
 				FAAA5199263DC2A000F7BE59 /* DonateConfirmation.storyboard in Resources */,
 				FAF9655225B88D2100C305D4 /* OrganisationTableViewCell.xib in Resources */,
+				FA54A68C266FE72500C44EED /* CauseCollectionViewCell.xib in Resources */,
 				FA81A01A26402A0F009BBB8A /* ActionTableViewCell.xib in Resources */,
 				FA57A80E26394C6700AEB76C /* FinanceMetricTableViewCell.xib in Resources */,
 				FA2A79A826138C660075ABCF /* DonateCause.storyboard in Resources */,
@@ -1314,11 +1380,13 @@
 				FAD1749F2637111500B1E4F3 /* OrgHeaderTableViewCell.xib in Resources */,
 				FA61D72D26173E0800FB4935 /* DonateOrganization.storyboard in Resources */,
 				FA9D5EA62614C4060050CC9F /* MyBucketTableViewCell.xib in Resources */,
+				FA54A67A266FB74C00C44EED /* PrevSupportedCollectionViewCell.xib in Resources */,
 				FAAA51A3263DD50200F7BE59 /* OrganisationWithAmountCell.xib in Resources */,
 				FAC5A61825F3D987003F5071 /* OurTransparency.storyboard in Resources */,
 				FA1653E02620A8BD00DBA8D1 /* LetsGoGreater.storyboard in Resources */,
 				FAB44E1325B9887200028943 /* GlacialIndifference-Bold.otf in Resources */,
 				FA2E24C325BC5EBB00F75CCC /* CustomAlert.storyboard in Resources */,
+				FA9C848F266F92AE00731233 /* ImactDonationCollectionViewCell.xib in Resources */,
 				FA58AA0125C020D900641CA2 /* Search.storyboard in Resources */,
 				FAB44E1C25B9B03900028943 /* OrganisationDetails.storyboard in Resources */,
 				FA93FF4F25A9CAB10019FF60 /* GoogleService-Info.plist in Resources */,
@@ -1385,6 +1453,7 @@
 				FA58AA0925C0324700641CA2 /* DonateItem.swift in Sources */,
 				FA16081E25BAFDD400B7ED43 /* ContactCollectionViewCell.swift in Sources */,
 				FA00E6E125AA2D3500887B48 /* WelcomeViewController.swift in Sources */,
+				FA54A681266FDD5D00C44EED /* ProfileViewController.swift in Sources */,
 				FAC5A61925F3D987003F5071 /* OurTransparencyViewController.swift in Sources */,
 				FAAAD47E263AB18F009CA960 /* SectionHeaderTableViewCell.swift in Sources */,
 				FAAA5188263D53FA00F7BE59 /* ChooseAmountStepOneVC.swift in Sources */,
@@ -1450,13 +1519,16 @@
 				FAF9657425B8A56300C305D4 /* OrganisationItem.swift in Sources */,
 				FA918A3C25F3CA1900F9B9C5 /* SettingsTableViewCell.swift in Sources */,
 				FA93FF6125A9EE620019FF60 /* Coordinator.swift in Sources */,
+				FA9C848E266F92AE00731233 /* ImactDonationCollectionViewCell.swift in Sources */,
 				FA57A804263945E600AEB76C /* ReviewTableViewCell.swift in Sources */,
+				FA54A68B266FE72500C44EED /* CauseCollectionViewCell.swift in Sources */,
 				FA9E340725B0608F000F876D /* FirebaseManager.swift in Sources */,
 				FA1653E62620A9B300DBA8D1 /* StartDonateViewController.swift in Sources */,
 				FAC5A60B25F3D7D8003F5071 /* MyAccountViewController.swift in Sources */,
 				FA93FF5525A9D30F0019FF60 /* SignUpViewController.swift in Sources */,
 				FA1653DC2620A8AF00DBA8D1 /* LetsGoGreaterViewController.swift in Sources */,
 				FA58AA0525C0306600641CA2 /* DonateItemRef.swift in Sources */,
+				FA54A679266FB74C00C44EED /* PrevSupportedCollectionViewCell.swift in Sources */,
 				FAAA9A8325A61BD8001CC5A6 /* SceneDelegate.swift in Sources */,
 				FA93FF7725AA024D0019FF60 /* InputView.swift in Sources */,
 				FA93FF5925A9D3A20019FF60 /* SignInViewController.swift in Sources */,
@@ -1617,7 +1689,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lend/Lend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JZHT94XFV6;
 				INFOPLIST_FILE = Lend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1641,7 +1713,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Lend/Lend.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JZHT94XFV6;
 				INFOPLIST_FILE = Lend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -182,4 +182,7 @@ class Coordinator {
         return storyboard.instantiateInitialViewController() as! InfoViewController
     }
     
+    static func instantiateViewController<T:UIViewController>(_ withStoryboardName: String) -> T {
+        return UIStoryboard(name: withStoryboardName, bundle: nil).instantiateInitialViewController() as! T
+    }
 }

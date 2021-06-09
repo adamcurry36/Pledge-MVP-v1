@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="PrevSupportedCollectionViewCell" customModule="Lend" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="284" height="132"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="284" height="132"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell header" translatesAutoresizingMaskIntoConstraints="NO" id="xNk-z6-x4G">
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="VEA-om-UFK"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLb-an-BpC">
+                        <rect key="frame" x="112" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="ISS-Wc-de7"/>
+                            <constraint firstAttribute="width" secondItem="SLb-an-BpC" secondAttribute="height" multiplier="1:1" id="bPq-6d-Wjz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuj-fo-VSc">
+                        <rect key="frame" x="10" y="80" width="264" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8z-r8-pAs">
+                        <rect key="frame" x="10" y="105" width="264" height="13.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="11"/>
+                        <color key="textColor" name="darkGrayText"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="k8z-r8-pAs" firstAttribute="top" secondItem="Iuj-fo-VSc" secondAttribute="bottom" constant="8" id="0DA-Dy-CEl"/>
+                <constraint firstItem="k8z-r8-pAs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="WZu-Wl-3tl"/>
+                <constraint firstItem="Iuj-fo-VSc" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="YLn-SD-Wwm"/>
+                <constraint firstItem="SLb-an-BpC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Yb7-RD-Cjl"/>
+                <constraint firstItem="Iuj-fo-VSc" firstAttribute="top" secondItem="SLb-an-BpC" secondAttribute="bottom" constant="10" id="YjX-fg-4II"/>
+                <constraint firstItem="Iuj-fo-VSc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="h7E-ZW-bOW"/>
+                <constraint firstItem="xNk-z6-x4G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hC1-z9-tvC"/>
+                <constraint firstAttribute="trailing" secondItem="xNk-z6-x4G" secondAttribute="trailing" id="lhd-NQ-LmQ"/>
+                <constraint firstItem="SLb-an-BpC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="owA-5C-TqL"/>
+                <constraint firstItem="k8z-r8-pAs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="phj-Nw-00v"/>
+                <constraint firstItem="xNk-z6-x4G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wlK-Lc-XVw"/>
+            </constraints>
+            <size key="customSize" width="284" height="203"/>
+            <connections>
+                <outlet property="imageView" destination="SLb-an-BpC" id="tVd-bh-i8M"/>
+                <outlet property="titleLabel" destination="Iuj-fo-VSc" id="TCd-3f-XZk"/>
+                <outlet property="typeLabel" destination="k8z-r8-pAs" id="PXM-on-gh5"/>
+            </connections>
+            <point key="canvasLocation" x="310.14492753623193" y="189.17410714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cell header" width="220" height="40"/>
+        <namedColor name="darkGrayText">
+            <color red="0.51372549019607838" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -8,7 +8,8 @@
 import UIKit
 
 enum AppColor: String {
-    case blue               //#0BB4F3
+    case blue               //#3C7EFD
+    case midBlue               //#0BB4F3
     case borderGray         //#E4E4E4
     case brown              //#9F8064
     case darkBlue           //#13305C

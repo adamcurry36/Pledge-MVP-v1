@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImpactTableViewCell: UITableViewCell {
+class ImpactTableViewCell: UITableViewCell {//todo: //del
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
